@@ -14,6 +14,7 @@ export class FinalizadaComponent implements OnInit {
   constructor(private atividadeService: AtividadeService) {}
 
   ngOnInit(): void {
+    // lsitagem das atividades finalizadas
     this.atividadeService.atividadeListFinalized().subscribe(
       list => this.atividades = list
     );

@@ -33,6 +33,7 @@ export class ExibirComponent implements OnInit {
     // contagem dos caracteres da descricao
     this.novaAtividade.get('descricao')!.valueChanges.subscribe((v)=> this.descriptionLength.next(v.length));
 
+    // pega id da url para buscar a atividade
     const id = +this.route.snapshot.paramMap.get('idAtividade')!;
     this.atividadeService.getById(id).subscribe((atividade) => {
       this.atividade = atividade;
@@ -46,6 +47,7 @@ export class ExibirComponent implements OnInit {
     });
   }
 
+  // altera os botos em "editar" e "salvar"
   edita(){
     this.editar = false;
   }

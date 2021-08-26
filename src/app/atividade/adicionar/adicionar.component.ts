@@ -29,7 +29,6 @@ export class AdicionarComponent implements OnInit {
 
     // contagem dos caracteres da descricao
     this.novaAtividade.get('descricao')!.valueChanges.subscribe((v)=> this.descriptionLength.next(v.length));
-
   }
 
   salvar(): void {

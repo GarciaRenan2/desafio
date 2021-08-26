@@ -18,6 +18,7 @@ export class DeletarComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    // pega o id da url para buscar a atividade
     const id = +this.route.snapshot.paramMap.get('idAtividade')!;
     this.atividadeService.getById(id).subscribe((atividade) => {
       this.atividade = atividade;
@@ -37,6 +38,7 @@ export class DeletarComponent implements OnInit {
   }
 
   cancel(): void {
+    // retorna para pagina inicial
     this.router.navigate(['/']);
   }
 }
