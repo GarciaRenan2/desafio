@@ -1,0 +1,17 @@
+table {
+  width: 100%;
+}
+
+.delete {
+  margin-left: 10px;
+}
+
+.del {
+  color: #e35e6b;
+  padding-top: 8px;
+}
+
+.visualizar {
+  margin-top: -6%;
+}
+

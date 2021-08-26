@@ -1,0 +1,39 @@
+<div class="container mt-5">
+  <mat-card>
+    <mat-card-title>Excluir Atividade</mat-card-title>
+    <form>
+      <mat-form-field>
+        <input
+          matInput
+          placeholder="Título"
+          [value]="atividade.titulo"
+          name="titulo"
+          disabled
+        />
+      </mat-form-field>
+      <mat-form-field>
+        <textarea
+          matInput
+          placeholder="Atividade"
+          [value]="atividade.descAtividade"
+          name="atividade"
+          disabled
+        ></textarea>
+      </mat-form-field>
+      <mat-form-field>
+        <input
+          matInput
+          placeholder="Tipo"
+          [value]="atividade.descTipo"
+          name="titulo"
+          disabled
+        />
+      </mat-form-field>
+    </form>
+    <button mat-raised-button (click)="deleteAtividade()" color="warn">
+      Excluir
+    </button>
+
+    <button mat-raised-button (click)="cancel()">Cancelar</button>
+  </mat-card>
+</div>

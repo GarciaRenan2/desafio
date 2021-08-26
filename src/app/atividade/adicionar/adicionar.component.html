@@ -1,0 +1,56 @@
+<div class="container">
+  <div style="margin-top: 10%">
+    <h1>Adicionar Nova Atividade</h1>
+  </div>
+
+  <form class="form-group" [formGroup]="novaAtividade" (ngSubmit)="salvar()">
+    <div class="form-group mt-4">
+      <label for="titulo">Título</label>
+      <input
+        type="text"
+        class="form-control"
+        id="titulo"
+        formControlName="titulo"
+        required
+      />
+    </div>
+
+    <div class="form-group mt-4">
+      <label for="descricao">Descrição</label>
+      <textarea
+        class="form-control"
+        id="descricao"
+        formControlName="descricao"
+        required
+      ></textarea>
+
+      <div class="form-row__description">
+        Total de caracteres: {{ descriptionLength | async }}
+      </div>
+      <span class="validator" *ngIf="novaAtividade.get('descricao')?.invalid &&
+      novaAtividade.get('descricao')?.touched">
+        Esse tipo de atividade requer pelo menos 50 caracteres.
+      </span>
+    </div>
+
+    <div class="form-group mt-4">
+      <label for="tipo">Tipo</label>
+      <select class="form-control" formControlName="tipo" required>
+        <option value="">Selecionar Tipo</option>
+        <option value="1">Desenvolvimento</option>
+        <option value="2">Atendimento</option>
+        <option value="3">Manutenção</option>
+        <option value="4">Manutenção urgente</option>
+      </select>
+    </div>
+
+    <div class="mt-4">
+      <button style="margin-right: 10px" class="btn btn-danger" routerLink="/">
+        Cancelar
+      </button>
+      <button [disabled]="novaAtividade.invalid" class="btn btn-success">
+        Salvar
+      </button>
+    </div>
+  </form>
+</div>
