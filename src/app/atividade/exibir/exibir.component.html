@@ -30,7 +30,7 @@
       <label for="descricao">Descrição</label>
       <textarea
         class="form-control"
-        #descricao="ngModel"
+        formControlName="descricao"
         [(ngModel)]="atividade.descAtividade"
         [attr.disabled]="editar == true ? true : null"
         required
@@ -38,7 +38,7 @@
       <div class="form-row__description">
         Total de caracteres: {{ descriptionLength | async }}
       </div>
-      <span *ngIf="descricao.invalid && descricao.touched">
+      <span class="validator" *ngIf="novaAtividade.get('descricao')?.invalid && novaAtividade.get('descricao')?.touched">
         Esse tipo de atividade requer pelo menos 50 caracteres.
       </span>
     </div>
