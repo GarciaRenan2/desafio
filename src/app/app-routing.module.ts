@@ -1,3 +1,4 @@
+import { DeletarComponent } from './atividade/deletar/deletar.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdicionarComponent } from './atividade/adicionar/adicionar.component';
@@ -5,6 +6,7 @@ import { AdicionarComponent } from './atividade/adicionar/adicionar.component';
 import { AtividadeComponent } from './atividade/atividade.component';
 import { FinalizadaComponent } from './atividade/finalizada/finalizada.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { ExibirComponent } from './atividade/exibir/exibir.component';
 
 const routes: Routes = [
   {
@@ -23,6 +25,14 @@ const routes: Routes = [
   {
     path: 'adicionar',
     component: AdicionarComponent,
+  },
+  {
+    path: 'exibir/:idAtividade',
+    component: ExibirComponent,
+  },
+  {
+    path: 'deletar/:idAtividade',
+    component: DeletarComponent,
   },
   {
     path: '**',

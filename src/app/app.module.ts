@@ -9,7 +9,9 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatButtonModule } from  '@angular/material/button';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatCardModule } from  '@angular/material/card';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,6 +22,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FinalizadaComponent } from './atividade/finalizada/finalizada.component';
 import { MessageComponent } from './message/message.component';
+import { DeletarComponent } from './atividade/deletar/deletar.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +32,8 @@ import { MessageComponent } from './message/message.component';
     ExibirComponent,
     NotFoundComponent,
     FinalizadaComponent,
-    MessageComponent
+    MessageComponent,
+    DeletarComponent
   ],
   imports: [
     CommonModule,
@@ -39,12 +43,14 @@ import { MessageComponent } from './message/message.component';
     BrowserAnimationsModule,
     MatFormFieldModule,
     MatInputModule,
+    MatCardModule,
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
     MatButtonModule,
     MatSnackBarModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
